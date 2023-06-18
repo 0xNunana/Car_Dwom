@@ -45,3 +45,8 @@ export interface optionProps{
     title:string;
     options: Options[]
 }
+
+export interface showMoreProps{
+    pageNumber:number;
+    isNext:boolean
+}

@@ -5,6 +5,7 @@ import SearchBar from '@/components/SearchBar'
 import { fetchcars } from '@/utils'
 import Image from 'next/image'
 import { fuels, yearsOfProduction } from '@/constants'
+import ShowMore from '@/components/ShowMore'
 
 export default async function Home({searchParams}) {
 const Allcars = await fetchcars({
@@ -42,6 +43,10 @@ const DataisEmpty = !Array.isArray(Allcars) || Allcars.length <1 || !Allcars
       <CarCard car={car}/>
     ))}
   </div>
+  <ShowMore 
+  pageNumber ={(searchParams.limit || 10)/10}
+  isNext={(searchParams.limit || 10)> Allcars.length}
+  />
   
   </section>):
 (<div className='home__error-container'>
