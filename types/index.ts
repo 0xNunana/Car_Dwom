@@ -36,3 +36,12 @@ export interface filterProps{
   limit:number
   model:string
 }
+
+export interface Options{
+    title:string;
+    value:string
+}
+export interface optionProps{
+    title:string;
+    options: Options[]
+}
